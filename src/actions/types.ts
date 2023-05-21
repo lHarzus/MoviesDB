@@ -10,6 +10,7 @@ export const GET_SERIESSIMILAR = "GET_SERIESSIMILAR";
 export const GET_SERIESEPG = "GET_SERIESEPG";
 export const GET_SERIESSEASON = "GET_SERIESSEASON";
 
+//Movies types
 export type Movies = {
   adult: boolean;
   backdrop_path: string;
@@ -28,6 +29,28 @@ export type Movies = {
   vote_count: number;
 };
 
+//Movies interface
+
+export interface MoviesError {
+  type: typeof ERROR_MOVIES;
+}
+
+export interface GetMovies {
+  type: typeof GET_TRENDING | typeof GET_MOVIES | typeof GET_SERIES;
+  payload: {
+    results: Movies[];
+    page: number;
+  };
+}
+
+export interface GetGenresMovies {
+  type: typeof GET_GENRESM;
+  payload: {
+    genres: Genres[];
+  };
+}
+
+//Series types
 export type Series = {
   adult: boolean;
   backdrop_path: string;
@@ -52,26 +75,6 @@ export type EpisodeGroup = {
   id: string;
   name: string;
   network: Networks;
-};
-
-export type Genres = {
-  id: number;
-  name: string;
-};
-
-export type Writer = {
-  id: number;
-  credit_id: number;
-  name: string;
-  gender: number;
-  profile_path: string;
-};
-
-export type Networks = {
-  id: number;
-  logo_path: string;
-  name: string;
-  country: string;
 };
 
 export type Season = {
@@ -129,6 +132,8 @@ export type SeasonDetails = {
   seaspm_number: number;
 };
 
+//Series interfaces
+
 export interface GetSeriesSimilar {
   type: typeof GET_SERIESSIMILAR;
   payload: {
@@ -137,25 +142,10 @@ export interface GetSeriesSimilar {
   };
 }
 
-export interface GetGenresMovies {
-  type: typeof GET_GENRESM;
-  payload: {
-    genres: Genres[];
-  };
-}
-
 export interface GetGenresSeries {
   type: typeof GET_GENRESS;
   payload: {
     genres: Genres[];
-  };
-}
-
-export interface GetMovies {
-  type: typeof GET_TRENDING | typeof GET_MOVIES | typeof GET_SERIES;
-  payload: {
-    results: Movies[];
-    page: number;
   };
 }
 
@@ -181,10 +171,6 @@ export interface GetEpisodeGroups {
   };
 }
 
-export interface MoviesError {
-  type: typeof ERROR_MOVIES;
-}
-
 export interface SeriesError {
   type: typeof ERROR_SERIES;
 }
@@ -195,6 +181,29 @@ export interface GetSeasonDetails {
     results: SeasonDetails;
   };
 }
+
+//Global
+export type Writer = {
+  id: number;
+  credit_id: number;
+  name: string;
+  gender: number;
+  profile_path: string;
+};
+
+export type Genres = {
+  id: number;
+  name: string;
+};
+
+export type Networks = {
+  id: number;
+  logo_path: string;
+  name: string;
+  country: string;
+};
+
+//Export types
 
 export type MoviesDispatchTypes = GetMovies | MoviesError | GetGenresMovies;
 
