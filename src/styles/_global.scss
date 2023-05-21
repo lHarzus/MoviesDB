@@ -1,0 +1,86 @@
+$primary: #fe5f55;
+$secondary: #f0b67f;
+$accent: #e3c498;
+$background: rgb(51, 50, 50);
+$background2: rgb(88, 86, 86);
+
+body {
+  margin: 0;
+}
+
+html {
+  /*62.5% of 16px = 10px*/
+  font-size: 62.5%;
+}
+
+/*Links*/
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  color: $primary;
+  display: block;
+  font-size: 2rem;
+  padding: 1rem;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $primary;
+    color: $background;
+    transition: all 0.3s;
+    box-shadow: 0px 0px 10px 1px $primary;
+  }
+}
+
+/*Toggle*/
+.toggle {
+  font-size: 2rem;
+  color: $primary;
+}
+
+.slider {
+  border: 1px solid $primary;
+  border-radius: 25px;
+  padding: 1rem 0;
+  color: $primary;
+  span {
+    padding: 0 1rem;
+    cursor: pointer;
+  }
+  .selected {
+    background-color: $primary;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    color: white;
+  }
+}
+
+/*Buttons*/
+.btn {
+  background-color: $secondary;
+  border: none;
+  border-radius: 25px;
+  padding: 1rem 2rem;
+  color: $background;
+  cursor: pointer;
+  &:hover {
+    background-color: $accent;
+  }
+}
+
+/*Input*/
+.input-button {
+  box-shadow: 0px 0px 10px 1px grey;
+  border-radius: 25px;
+  display: flex;
+  background-color: white;
+}
+
+input {
+  border: none;
+  border-radius: 25px;
+  width: 100%;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}

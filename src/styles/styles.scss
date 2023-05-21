@@ -1,0 +1,115 @@
+@import "./global";
+
+/*Navbar*/
+.navbar {
+  background-color: $background;
+  text-align: center;
+  padding: 1rem;
+}
+
+.navbar-logo {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-size: 3rem;
+  }
+}
+
+.db {
+  color: $primary;
+}
+
+.navbar-options {
+  border-top: 1px solid rgba($primary, 0.1);
+}
+
+.disabled {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-logo {
+    .toggle {
+      display: none;
+    }
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .disabled {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-options {
+    border: none;
+    height: 100%;
+  }
+}
+
+/*Landing*/
+.landing {
+}
+
+.landing-search {
+  background-color: $background2;
+  padding: 2rem 15%;
+  h1 {
+    color: white;
+    font-size: 4rem;
+    margin-bottom: 0;
+  }
+  h2 {
+    color: white;
+    margin-bottom: 3rem;
+    margin-top: 0;
+    font-size: 2rem;
+    color: $secondary;
+  }
+}
+
+.landing-trending-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h1 {
+    font-size: 3rem;
+    color: $primary;
+  }
+}
+
+.trending-movies {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  overflow: auto;
+  img {
+    width: 30vw;
+  }
+  span {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .landing {
+    margin: 0 15%;
+  }
+
+  .trending-movies {
+    img {
+      width: 10vw;
+    }
+  }
+}
