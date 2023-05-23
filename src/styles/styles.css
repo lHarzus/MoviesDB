@@ -255,22 +255,24 @@ input:focus {
   justify-content: center;
   margin: 1rem;
 }
+.pagination .selected {
+  background-color: rgb(51, 50, 50);
+  color: white;
+}
 .pagination span {
   font-size: 2rem;
-  border: 3px solid black;
+  border: 3px solid rgb(51, 50, 50);
   padding: 1rem 1rem 0.7rem 1rem;
   border-radius: 5px;
   margin: 1px;
 }
-.pagination span .selected {
-  background-color: black;
-  color: white;
-}
 .pagination i {
+  color: rgb(51, 50, 50);
   font-size: 4.5rem;
   cursor: pointer;
   margin: 1px;
 }
-.pagination i .block {
+.pagination .block {
   cursor: not-allowed;
+  color: rgb(88, 86, 86);
 }/*# sourceMappingURL=styles.css.map */

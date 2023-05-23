@@ -197,26 +197,26 @@
   justify-content: center;
   margin: 1rem;
 
+  .selected {
+    background-color: $background;
+    color: white;
+  }
   span {
     font-size: 2rem;
-    border: 3px solid black;
+    border: 3px solid $background;
     padding: 1rem 1rem 0.7rem 1rem;
     border-radius: 5px;
     margin: 1px;
-
-    .selected {
-      background-color: black;
-      color: white;
-    }
   }
 
   i {
+    color: $background;
     font-size: 4.5rem;
     cursor: pointer;
     margin: 1px;
-
-    .block {
-      cursor: not-allowed;
-    }
+  }
+  .block {
+    cursor: not-allowed;
+    color: $background2;
   }
 }

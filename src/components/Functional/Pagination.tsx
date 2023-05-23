@@ -9,10 +9,10 @@ export const Pagination = ({
 }) => {
   const onClick = (side) => {
     if (side === "right") {
-      setPage(page + 1);
+      if (page !== 10) setPage(page + 1);
     }
     if (side === "left") {
-      setPage(page - 1);
+      if (page !== 1) setPage(page - 1);
     }
   };
   return (
