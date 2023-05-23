@@ -149,6 +149,7 @@ input:focus {
 }
 
 .landing-trending-header {
+  margin: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -159,6 +160,7 @@ input:focus {
 }
 
 .trending-movies {
+  margin: 0 1rem;
   display: flex;
   gap: 1rem;
   flex: 1;
@@ -178,5 +180,32 @@ input:focus {
   }
   .trending-movies img {
     width: 10vw;
+  }
+}
+/*Footer*/
+.footer {
+  background: rgb(51, 50, 50);
+  padding: 1rem;
+  text-align: center;
+}
+.footer p {
+  color: white;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.footer-content a:hover {
+  background-color: rgb(51, 50, 50);
+  color: #fe5f55;
+  box-shadow: 0px 0px 10px 1px rgb(51, 50, 50);
+}
+
+@media screen and (min-width: 1024px) {
+  .footer-content {
+    flex-direction: row;
   }
 }/*# sourceMappingURL=styles.css.map */
