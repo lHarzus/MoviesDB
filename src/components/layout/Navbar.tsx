@@ -16,10 +16,10 @@ export const Navbar = () => {
         ></i>
       </div>
       <div className={flag ? "navbar-options" : "navbar-options disabled"}>
-        <Link to="/" className="link">
+        <Link to="/movies" className="link">
           Movies
         </Link>
-        <Link to="/" className="link">
+        <Link to="/series" className="link">
           Series
         </Link>
       </div>
