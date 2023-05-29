@@ -59,7 +59,7 @@ export default function (
       return {
         ...state,
         loading: false,
-        seriesDetails: action.payload.results,
+        seriesDetails: action.payload,
       };
     case GET_SERIESSIMILAR:
       return {
@@ -78,7 +78,7 @@ export default function (
       return {
         ...state,
         loading: false,
-        season: action.payload.results,
+        season: action.payload,
       };
 
     case ERROR_SERIES:

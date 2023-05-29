@@ -22,8 +22,6 @@ export const getSeries =
     include_video: string = "false"
   ) =>
   async (dispatch: Dispatch<SeriesDispatchTypes>) => {
-    console.log(page, sort_by, language);
-
     try {
       const data = fetchDataFromApi("/discover/tv", {
         include_adult,
@@ -155,7 +153,7 @@ export const getSeriesTopRated =
 
 //Get series details
 export const getSeriesDetails =
-  (id) => async (dispatch: Dispatch<SeriesDispatchTypes>) => {
+  (id: number) => async (dispatch: Dispatch<SeriesDispatchTypes>) => {
     try {
       const data = fetchDataFromApi("/tv/" + id, {}).then((response) => {
         dispatch({

@@ -314,4 +314,53 @@ input:focus {
     gap: 1rem;
     margin-bottom: 5rem;
   }
+}
+/*Single series*/
+.ss-info img {
+  max-width: 40vw;
+}
+.ss-info h1 {
+  color: #fe5f55;
+  font-size: 4rem;
+}
+.ss-info .ss-date,
+.ss-info .ss-vote {
+  font-weight: bold;
+}
+.ss-info h2 {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f0b67f;
+}
+
+.singleSeries {
+  margin: 5% 15%;
+}
+
+.ss-seasons {
+  display: flex;
+}
+.ss-seasons p {
+  padding: 1rem;
+  color: rgb(88, 86, 86);
+  cursor: pointer;
+}
+.ss-seasons p:hover {
+  background-color: rgba(88, 86, 86, 0.3);
+  border-radius: 15px;
+}
+.ss-seasons .selected {
+  background-color: rgb(88, 86, 86);
+  color: white;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 1024px) {
+  .ss-info {
+    display: flex;
+    gap: 2rem;
+  }
+  .ss-info img {
+    max-width: 30vw;
+  }
 }/*# sourceMappingURL=styles.css.map */
