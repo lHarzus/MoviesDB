@@ -25,16 +25,86 @@ export const Pagination = ({
         }
         onClick={() => onClick("left")}
       ></i>
-      <span className={page === 1 ? "selected" : ""}>1</span>
-      <span className={page === 2 ? "selected" : ""}>2</span>
-      <span className={page === 3 ? "selected" : ""}>3</span>
-      <span className={page === 4 ? "selected" : ""}>4</span>
-      <span className={page === 5 ? "selected" : ""}>5</span>
-      <span className={page === 6 ? "selected" : ""}>6</span>
-      <span className={page === 7 ? "selected" : ""}>7</span>
-      <span className={page === 8 ? "selected" : ""}>8</span>
-      <span className={page === 9 ? "selected" : ""}>9</span>
-      <span className={page === 10 ? "selected" : ""}>10</span>
+      <span
+        className={page === 1 ? "selected" : ""}
+        onClick={() => {
+          setPage(1);
+        }}
+      >
+        1
+      </span>
+      <span
+        className={page === 2 ? "selected" : ""}
+        onClick={() => {
+          setPage(2);
+        }}
+      >
+        2
+      </span>
+      <span
+        className={page === 3 ? "selected" : ""}
+        onClick={() => {
+          setPage(3);
+        }}
+      >
+        3
+      </span>
+      <span
+        className={page === 4 ? "selected" : ""}
+        onClick={() => {
+          setPage(4);
+        }}
+      >
+        4
+      </span>
+      <span
+        className={page === 5 ? "selected" : ""}
+        onClick={() => {
+          setPage(5);
+        }}
+      >
+        5
+      </span>
+      <span
+        className={page === 6 ? "selected" : ""}
+        onClick={() => {
+          setPage(6);
+        }}
+      >
+        6
+      </span>
+      <span
+        className={page === 7 ? "selected" : ""}
+        onClick={() => {
+          setPage(7);
+        }}
+      >
+        7
+      </span>
+      <span
+        className={page === 8 ? "selected" : ""}
+        onClick={() => {
+          setPage(8);
+        }}
+      >
+        8
+      </span>
+      <span
+        className={page === 9 ? "selected" : ""}
+        onClick={() => {
+          setPage(9);
+        }}
+      >
+        9
+      </span>
+      <span
+        className={page === 10 ? "selected" : ""}
+        onClick={() => {
+          setPage(10);
+        }}
+      >
+        10
+      </span>
       <i
         className={
           page === 10

@@ -30,6 +30,11 @@ html {
   }
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /*Toggle*/
 .toggle {
   font-size: 2rem;
@@ -74,7 +79,7 @@ html {
   background-color: white;
 }
 
-input {
+.input {
   border: none;
   border-radius: 25px;
   width: 100%;

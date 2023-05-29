@@ -8,8 +8,8 @@ export const SeriesCard = ({ series }: { series: any }) => {
         <img
           src={"https://image.tmdb.org/t/p/w500/" + series.poster_path}
         ></img>
+        <span className="title">{series.original_name}</span>
       </Link>
-      <span>{series.original_name}</span>
       <p>{series.first_air_date}</p>
       <p>
         <span>{Math.round(series.vote_average * 10) / 10} / 10</span> with{" "}

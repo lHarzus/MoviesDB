@@ -36,7 +36,10 @@ const Landing = ({
         <h1>Welcome</h1>
         <h2>Milions of movies and series to discover. Explore now</h2>
         <div className="input-button">
-          <input placeholder="Search for a movies/series"></input>
+          <input
+            className="input"
+            placeholder="Search for a movies/series"
+          ></input>
           <button className="btn">Search</button>
         </div>
       </div>

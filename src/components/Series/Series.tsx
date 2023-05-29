@@ -24,12 +24,29 @@ const Series = ({
 }) => {
   const [type, setType] = useState("all");
 
+  const [page, setPage] = useState(1);
+
+  const [sorter, setSorter] = useState({
+    sortType: "vote_count",
+    sort: "desc",
+    adult: "false",
+    video: "false",
+  });
+
+  const { sortType, sort, adult, video } = sorter;
+
+  const submitSorter = (e, newSorter) => {
+    e.preventDefault();
+    setSorter(newSorter);
+  };
+
   useEffect(() => {
-    if (type === "all") getSeries();
+    if (type === "all")
+      getSeries(page, sortType + "." + sort, "en-US", adult, video);
     if (type === "popular") getSeriesPopular();
     if (type === "today") getSeriesAiringToday();
     if (type === "top") getSeriesTopRated();
-  }, [type]);
+  }, [type, page, sorter]);
 
   const onClick = (newType) => {
     if (newType !== type) setType(newType);
@@ -64,9 +81,21 @@ const Series = ({
         </p>
       </div>
       {type === "all" ? (
-        <DisplaySeries series={series.series} filter={true} />
+        <DisplaySeries
+          series={series.series}
+          filter={true}
+          page={page}
+          setPage={setPage}
+          submitSorter={submitSorter}
+        />
       ) : (
-        <DisplaySeries series={series.series} filter={false} />
+        <DisplaySeries
+          series={series.series}
+          filter={false}
+          page={page}
+          setPage={setPage}
+          submitSorter={submitSorter}
+        />
       )}
     </div>
   );
