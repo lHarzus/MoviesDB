@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Dispatch } from "redux";
 import {
   ERROR_SERIES,
@@ -23,6 +22,8 @@ export const getSeries =
     include_video: string = "false"
   ) =>
   async (dispatch: Dispatch<SeriesDispatchTypes>) => {
+    console.log(page, sort_by, language);
+
     try {
       const data = fetchDataFromApi("/discover/tv", {
         include_adult,
