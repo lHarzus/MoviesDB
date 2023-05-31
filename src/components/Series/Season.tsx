@@ -1,20 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Season = ({
   season,
-  seasonDetails,
+  id,
+  seasonNr,
 }: {
   season: any;
-  seasonDetails: any;
+  id: string;
+  seasonNr: number;
 }) => {
+  if (!season) return <div>Loading</div>;
   return (
     <div className="episodes">
       <h1>{season.name}</h1>
       <h3>{season.air_date}</h3>
       {season.episodes.map((e) => (
-        <div className="episode">
+        <Link
+          to={`/series/${id}/season/${seasonNr}/episode/${e.episode_number}`}
+          className="episode"
+        >
           <div>
             <img src={"https://image.tmdb.org/t/p/w500/" + e.still_path}></img>
           </div>
@@ -31,7 +38,7 @@ const Season = ({
             </h3>
             <p>{e.overview}</p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

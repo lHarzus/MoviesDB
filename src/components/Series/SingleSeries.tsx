@@ -76,10 +76,7 @@ const SingleSeries = ({
           </p>
         ))}
       </div>
-      <Season
-        seasonDetails={series.seriesDetails.seasons[seasonNr]}
-        season={series.season}
-      />
+      <Season season={series.season} id={id} seasonNr={seasonNr} />
     </div>
   );
 };

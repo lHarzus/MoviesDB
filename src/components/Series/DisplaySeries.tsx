@@ -19,7 +19,7 @@ export const DisplaySeries = ({
   if (series.isEmpty) return <p>Loading</p>;
   return (
     <div>
-      {filter ? <Filter submitSorter={submitSorter} /> : "notFilter"}
+      {filter ? <Filter submitSorter={submitSorter} /> : ""}
       <div className="display-series">
         {series.map((s: any, i: number) => (
           <SeriesCard series={s} key={i} />
