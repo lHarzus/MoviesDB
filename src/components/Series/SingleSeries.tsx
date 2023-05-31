@@ -34,7 +34,7 @@ const SingleSeries = ({
     getSeriesSeason(id, seasonNr);
   }, [seasonNr]);
 
-  if (!series.seriesDetails) return <div>Loading</div>;
+  if (!series.seriesDetails) return <div>Loading </div>;
   return (
     <div className="singleSeries">
       <div className="ss-info">
