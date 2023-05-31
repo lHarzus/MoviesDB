@@ -297,13 +297,55 @@
     border-radius: 15px;
   }
 }
-
 @media screen and (min-width: 1024px) {
   .ss-info {
     display: flex;
     gap: 2rem;
     img {
       max-width: 30vw;
+    }
+  }
+}
+
+/*Episode*/
+.episodes {
+  h1 {
+    color: $primary;
+  }
+}
+
+.episode {
+  background-color: rgb(238, 238, 238);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 3px rgb(238, 238, 238);
+  h1 {
+    color: $secondary;
+  }
+  i {
+    color: rgb(201, 137, 1);
+  }
+  .number-votes {
+    color: grey;
+  }
+  img {
+    width: 100%;
+    border-radius: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .episode {
+    width: 80%;
+    display: flex;
+    gap: 1rem;
+    .episode-header {
+      display: flex;
+      justify-content: space-between;
+    }
+    img {
+      width: 25vw;
     }
   }
 }

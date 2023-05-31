@@ -363,4 +363,44 @@ input:focus {
   .ss-info img {
     max-width: 30vw;
   }
+}
+/*Episode*/
+.episodes h1 {
+  color: #fe5f55;
+}
+
+.episode {
+  background-color: rgb(238, 238, 238);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 3px rgb(238, 238, 238);
+}
+.episode h1 {
+  color: #f0b67f;
+}
+.episode i {
+  color: rgb(201, 137, 1);
+}
+.episode .number-votes {
+  color: grey;
+}
+.episode img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 1024px) {
+  .episode {
+    width: 80%;
+    display: flex;
+    gap: 1rem;
+  }
+  .episode .episode-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .episode img {
+    width: 25vw;
+  }
 }/*# sourceMappingURL=styles.css.map */

@@ -7,6 +7,7 @@ import {
   getSeriesSeason,
   getSeriesEpisodeGroups,
 } from "../../actions/series";
+import Season from "./Season";
 
 const SingleSeries = ({
   getSeriesDetails,
@@ -75,6 +76,10 @@ const SingleSeries = ({
           </p>
         ))}
       </div>
+      <Season
+        seasonDetails={series.seriesDetails.seasons[seasonNr]}
+        season={series.season}
+      />
     </div>
   );
 };
