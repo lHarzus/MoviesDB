@@ -56,7 +56,7 @@ const SingleSeries = ({
               : "current"}
           </p>
           <p className="ss-vote">
-            {" "}
+            <i className="bi bi-star-fill star"></i>{" "}
             {Math.round(series.seriesDetails.vote_average * 10) / 10} / 10 with{" "}
             {series.seriesDetails.vote_count} votes
           </p>

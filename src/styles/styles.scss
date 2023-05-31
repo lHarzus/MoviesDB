@@ -259,7 +259,7 @@
 /*Single series*/
 .ss-info {
   img {
-    max-width: 40vw;
+    max-width: 30vw;
   }
   h1 {
     color: $primary;
@@ -297,12 +297,12 @@
     border-radius: 15px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 724px) {
   .ss-info {
     display: flex;
     gap: 2rem;
     img {
-      max-width: 30vw;
+      max-height: 30vh;
     }
   }
 }
@@ -320,11 +320,9 @@
   margin: 1rem;
   border-radius: 15px;
   box-shadow: 0px 0px 5px 3px rgb(238, 238, 238);
+  cursor: pointer;
   h1 {
     color: $secondary;
-  }
-  i {
-    color: rgb(201, 137, 1);
   }
   .number-votes {
     color: grey;
@@ -333,6 +331,14 @@
     width: 100%;
     border-radius: 15px;
   }
+}
+
+.episode-info {
+  width: 100%;
+}
+
+.star {
+  color: rgb(201, 137, 1);
 }
 
 @media screen and (min-width: 1024px) {
