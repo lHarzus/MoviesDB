@@ -22,15 +22,32 @@ const Series = ({
   getSeriesTopRated: any;
   series: any;
 }) => {
+  const queryParameters = new URLSearchParams(window.location.search);
+  const sortTypes = queryParameters.get("type");
+  const sortDir = queryParameters.get("sort");
+  const isAdult = queryParameters.get("adult");
+  const hasVideo = queryParameters.get("video");
+
+  console.log(sortTypes, sortDir, isAdult, hasVideo);
+
   const [type, setType] = useState("all");
 
   const [page, setPage] = useState(1);
 
-  const [sorter, setSorter] = useState({
+  const [sorter, setSorter] = useState<{
+    sortType: string | null;
+    sort: string | null;
+    adult: string | null;
+    video: string | null;
+  }>({
     sortType: "vote_count",
     sort: "desc",
     adult: "false",
     video: "false",
+  });
+
+  useEffect(() => {
+    //if (sortType) setSorter({ ...sorter, sortType: sortTypes });
   });
 
   const { sortType, sort, adult, video } = sorter;
