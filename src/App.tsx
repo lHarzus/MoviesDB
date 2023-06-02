@@ -7,6 +7,7 @@ import { Footer } from "./components/layout/Footer";
 import Movies from "./components/Movies/Movies";
 import Series from "./components/Series/Series";
 import SingleSeries from "./components/Series/SingleSeries";
+import Episode from "./components/Series/Episode";
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -21,6 +22,10 @@ function App() {
           <Route path="/movies" element={<Movies />} />
           <Route path="/series" element={<Series />} />
           <Route path="/series/:param" element={<SingleSeries />} />
+          <Route
+            path="/series/:param/season/:param/episode/:param"
+            element={<Episode />}
+          />
         </Routes>
         <Footer />
       </Router>

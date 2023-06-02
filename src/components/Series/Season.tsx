@@ -17,8 +17,9 @@ const Season = ({
     <div className="episodes">
       <h1>{season.name}</h1>
       <h3>{season.air_date}</h3>
-      {season.episodes.map((e) => (
+      {season.episodes.map((e, i) => (
         <Link
+          key={i}
           to={`/series/${id}/season/${seasonNr}/episode/${e.episode_number}`}
           className="episode"
         >
