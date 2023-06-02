@@ -22,15 +22,9 @@ const Series = ({
   getSeriesTopRated: any;
   series: any;
 }) => {
-  const queryParameters = new URLSearchParams(window.location.search);
-  const sortTypes = queryParameters.get("type");
-  const sortDir = queryParameters.get("sort");
-  const isAdult = queryParameters.get("adult");
-  const hasVideo = queryParameters.get("video");
-
-  console.log(sortTypes, sortDir, isAdult, hasVideo);
-
   const [type, setType] = useState("all");
+
+  const [flag, setFalg] = useState(false);
 
   const [page, setPage] = useState(1);
 
@@ -46,15 +40,12 @@ const Series = ({
     video: "false",
   });
 
-  useEffect(() => {
-    //if (sortType) setSorter({ ...sorter, sortType: sortTypes });
-  });
-
   const { sortType, sort, adult, video } = sorter;
 
   const submitSorter = (e, newSorter) => {
     e.preventDefault();
     setSorter(newSorter);
+    setFalg(!flag);
   };
 
   useEffect(() => {
@@ -63,7 +54,7 @@ const Series = ({
     if (type === "popular") getSeriesPopular();
     if (type === "today") getSeriesAiringToday();
     if (type === "top") getSeriesTopRated();
-  }, [type, page, sorter]);
+  }, [type, page, flag]);
 
   const onClick = (newType) => {
     if (newType !== type) setType(newType);
