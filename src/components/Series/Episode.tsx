@@ -22,6 +22,7 @@ const Episode = ({
 
   return (
     <div>
+      <p>NOME SERIE</p>
       <img src={"https://image.tmdb.org/t/p/w500/" + season.poster_path}></img>
     </div>
   );
