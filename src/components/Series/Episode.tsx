@@ -30,7 +30,6 @@ const Episode = ({
 
 Episode.propTypes = {
   getSeriesSeason: PropTypes.func.isRequired,
-  series: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
