@@ -277,23 +277,25 @@
 }
 
 .singleSeries {
-  margin: 5% 15%;
+  padding: 5% 15%;
+  background-color: $background2 ;
+  color: white;
 }
 
 .ss-seasons {
   display: flex;
   p {
     padding: 1rem;
-    color: $background2;
+    color: white;
     cursor: pointer;
   }
   p:hover {
-    background-color: rgb($background2, 0.3);
+    background-color: rgb($background, 0.3);
     border-radius: 15px;
   }
   .selected {
-    background-color: $background2;
-    color: white;
+    background-color: white;
+    color: black;
     border-radius: 15px;
   }
 }
@@ -338,7 +340,60 @@
 }
 
 .star {
-  color: rgb(201, 137, 1);
+  color: rgb(201, 137, 1) !important;
+}
+
+.crew{
+  display: flex;
+}
+
+.ep-info{
+  background-color: $background2;
+  padding: 1rem;
+  color: white;
+  h1{
+    color: $primary;
+  }
+  .go-back{
+    color: white;
+    font-size: 2rem;
+    &:hover{
+      color: lightgrey;
+    }
+  }
+  i{
+    font-size: 1rem;
+    cursor: pointer;
+    color: black;
+    &:hover{
+      color: lightgrey;
+    }
+  }
+  h2{
+    color: $secondary;
+  }
+  .trending-movies{
+    margin-bottom: 5rem;
+  }
+}
+
+.episode-header{
+  display: flex;
+  gap: 1rem;
+  img{
+    max-width: 50%;
+  }
+
+}
+
+.crew{
+  display: block;
+  text-align: center;
+  img {
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+}
 }
 
 @media screen and (min-width: 1024px) {

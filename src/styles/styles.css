@@ -340,7 +340,9 @@ input:focus {
 }
 
 .singleSeries {
-  margin: 5% 15%;
+  padding: 5% 15%;
+  background-color: rgb(88, 86, 86);
+  color: white;
 }
 
 .ss-seasons {
@@ -348,16 +350,16 @@ input:focus {
 }
 .ss-seasons p {
   padding: 1rem;
-  color: rgb(88, 86, 86);
+  color: white;
   cursor: pointer;
 }
 .ss-seasons p:hover {
-  background-color: rgba(88, 86, 86, 0.3);
+  background-color: rgba(51, 50, 50, 0.3);
   border-radius: 15px;
 }
 .ss-seasons .selected {
-  background-color: rgb(88, 86, 86);
-  color: white;
+  background-color: white;
+  color: black;
   border-radius: 15px;
 }
 
@@ -399,7 +401,59 @@ input:focus {
 }
 
 .star {
-  color: rgb(201, 137, 1);
+  color: rgb(201, 137, 1) !important;
+}
+
+.crew {
+  display: flex;
+}
+
+.ep-info {
+  background-color: rgb(88, 86, 86);
+  padding: 1rem;
+  color: white;
+}
+.ep-info h1 {
+  color: #fe5f55;
+}
+.ep-info .go-back {
+  color: white;
+  font-size: 2rem;
+}
+.ep-info .go-back:hover {
+  color: lightgrey;
+}
+.ep-info i {
+  font-size: 1rem;
+  cursor: pointer;
+  color: black;
+}
+.ep-info i:hover {
+  color: lightgrey;
+}
+.ep-info h2 {
+  color: #f0b67f;
+}
+.ep-info .trending-movies {
+  margin-bottom: 5rem;
+}
+
+.episode-header {
+  display: flex;
+  gap: 1rem;
+}
+.episode-header img {
+  max-width: 50%;
+}
+
+.crew {
+  display: block;
+  text-align: center;
+}
+.crew img {
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
 }
 
 @media screen and (min-width: 1024px) {
