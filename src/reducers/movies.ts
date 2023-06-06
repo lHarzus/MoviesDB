@@ -6,6 +6,7 @@ import {
   MoviesDispatchTypes,
   GET_GENRESM,
   GET_MOVIES,
+  GET_SEARCH
 } from "../actions/types";
 
 interface DefaultStateI {
@@ -14,6 +15,7 @@ interface DefaultStateI {
   page: number | null;
   movies: Movies[];
   genres: Genres[];
+  search: Movies[];
 }
 
 const initialState: DefaultStateI = {
@@ -22,6 +24,7 @@ const initialState: DefaultStateI = {
   page: null,
   movies: [],
   genres: [],
+  search: [],
 };
 
 export default function (
@@ -48,6 +51,12 @@ export default function (
         ...state,
         loading: false,
         genres: action.payload.genres,
+      };
+    case GET_SEARCH:
+      return {
+        ...state,
+        loading: false,
+        search: action.payload.results,
       };
     case ERROR_MOVIES:
       return {

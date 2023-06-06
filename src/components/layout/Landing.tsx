@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { MoviesLanding } from "../Landing/MoviesLanding";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getTrending, getMoviePopular } from "../../actions/movies";
 import { getSeriesPopular } from "../../actions/series";
+import { useNavigate } from "react-router-dom";
 
 const Landing = ({
   movies,
@@ -20,12 +21,19 @@ const Landing = ({
 }) => {
   const [filter, setFilter] = useState<string>("day");
   const [popularFilter, setPopularFilter] = useState<string>("movies");
+  const ref = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getTrending("all", filter);
     getMoviePopular();
     getSeriesPopular();
   }, [filter]);
+
+  const onClick = () => {
+    if (ref.current && ref.current.value !== "")
+      navigate(`/search?query=${ref.current.value}`);
+  };
 
   if (movies.loading) return <p>Loading</p>;
 
@@ -39,8 +47,11 @@ const Landing = ({
           <input
             className="input"
             placeholder="Search for a movies/series"
+            ref={ref}
           ></input>
-          <button className="btn">Search</button>
+          <button className="btn" onClick={onClick}>
+            Search
+          </button>
         </div>
       </div>
       <MoviesLanding

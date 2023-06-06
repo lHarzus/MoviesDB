@@ -8,6 +8,8 @@ import Movies from "./components/Movies/Movies";
 import Series from "./components/Series/Series";
 import SingleSeries from "./components/Series/SingleSeries";
 import Episode from "./components/Series/Episode";
+import Search from "./components/layout/Search";
+import SingleMovie from "./components/Movies/SingleMovie";
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -26,6 +28,8 @@ function App() {
             path="/series/:param/season/:param/episode/:param"
             element={<Episode />}
           />
+          <Route path="/search" element={<Search />} />
+          <Route path="/movie/:param" element={<SingleMovie />} />
         </Routes>
         <Footer />
       </Router>

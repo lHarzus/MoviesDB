@@ -412,3 +412,18 @@
     }
   }
 }
+
+/*Search*/
+.search{
+ h1{
+  text-align: center;
+  font-size: 3rem;
+  color: $secondary;
+ }
+}
+
+@media screen and (min-width: 1024px) {
+  .search{
+    margin: 10rem 15%;
+  }
+}

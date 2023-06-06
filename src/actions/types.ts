@@ -9,6 +9,7 @@ export const GET_SERIESDETAILS = "GET_SERIESDETAILS";
 export const GET_SERIESSIMILAR = "GET_SERIESSIMILAR";
 export const GET_SERIESEPG = "GET_SERIESEPG";
 export const GET_SERIESSEASON = "GET_SERIESSEASON";
+export const GET_SEARCH = "GET_SEARCH";
 
 //Movies types
 export type Movies = {
@@ -132,6 +133,13 @@ export type SeasonDetails = {
   seaspm_number: number;
 };
 
+export type Search = {
+  page: number;
+  results: Movies[];
+  total_pages: number;
+  total_results: number;
+};
+
 //Series interfaces
 
 export interface GetSeriesSimilar {
@@ -182,6 +190,15 @@ export interface GetSeasonDetails {
   };
 }
 
+
+
+export interface GetSearch {
+  type: typeof GET_SEARCH;
+  payload: {
+    results: Search;
+  };
+}
+
 //Global
 export type Writer = {
   id: number;
@@ -205,7 +222,7 @@ export type Networks = {
 
 //Export types
 
-export type MoviesDispatchTypes = GetMovies | MoviesError | GetGenresMovies;
+export type MoviesDispatchTypes = GetMovies | MoviesError | GetGenresMovies | GetSearch;
 
 export type SeriesDispatchTypes =
   | SeriesError

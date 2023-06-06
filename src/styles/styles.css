@@ -471,4 +471,16 @@ input:focus {
   .episode img {
     width: 25vw;
   }
+}
+/*Search*/
+.search h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #f0b67f;
+}
+
+@media screen and (min-width: 1024px) {
+  .search {
+    margin: 10rem 15%;
+  }
 }/*# sourceMappingURL=styles.css.map */

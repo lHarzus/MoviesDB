@@ -5,6 +5,7 @@ import {
   ERROR_MOVIES,
   GET_GENRESM,
   GET_MOVIES,
+  GET_SEARCH,
   MoviesDispatchTypes,
 } from "./types";
 import { fetchDataFromApi } from "../utils/api";
@@ -169,3 +170,24 @@ export const getMovieUpComing =
       });
     }
   };
+
+//Search movie by name
+export const search =
+(query : string) =>
+async (dispatch: Dispatch<MoviesDispatchTypes>) => {
+  try {
+    const data = fetchDataFromApi("/search/movie",{
+      query,
+    }).then((response) => {
+      dispatch({
+        type: GET_SEARCH,
+        payload: response,
+      });
+    });
+  } catch (err) {
+    console.log(err);
+    dispatch({
+      type: ERROR_MOVIES,
+    });
+  }
+};
