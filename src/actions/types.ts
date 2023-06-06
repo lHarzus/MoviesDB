@@ -10,6 +10,7 @@ export const GET_SERIESSIMILAR = "GET_SERIESSIMILAR";
 export const GET_SERIESEPG = "GET_SERIESEPG";
 export const GET_SERIESSEASON = "GET_SERIESSEASON";
 export const GET_SEARCH = "GET_SEARCH";
+export const GET_MOVIEDETAILS = "GET_MOVIEDETAILS";
 
 //Movies types
 export type Movies = {
@@ -26,6 +27,25 @@ export type Movies = {
   popularity: number;
   release_date: string;
   video: boolean;
+  vote_average: number;
+  vote_count: number;
+};
+
+export type MovieDetails = {
+  adult: string;
+  backdrop_path: string;
+  budget: number;
+  genres: Genres[];
+  homepage: string;
+  id: number;
+  originak_title: string;
+  overview: string;
+  poster_path: string;
+  release_date:string;
+  revenue: number;
+  runtime: number;
+  status: string;
+  title: string;
   vote_average: number;
   vote_count: number;
 };
@@ -48,6 +68,13 @@ export interface GetGenresMovies {
   type: typeof GET_GENRESM;
   payload: {
     genres: Genres[];
+  };
+}
+
+export interface GetMovieDetails {
+  type: typeof GET_MOVIEDETAILS;
+  payload: {
+    results: MovieDetails;
   };
 }
 
@@ -222,7 +249,7 @@ export type Networks = {
 
 //Export types
 
-export type MoviesDispatchTypes = GetMovies | MoviesError | GetGenresMovies | GetSearch;
+export type MoviesDispatchTypes = GetMovies | MoviesError | GetGenresMovies | GetSearch | GetMovieDetails;
 
 export type SeriesDispatchTypes =
   | SeriesError

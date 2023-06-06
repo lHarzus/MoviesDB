@@ -6,6 +6,7 @@ import {
   GET_GENRESM,
   GET_MOVIES,
   GET_SEARCH,
+  GET_MOVIEDETAILS,
   MoviesDispatchTypes,
 } from "./types";
 import { fetchDataFromApi } from "../utils/api";
@@ -191,3 +192,27 @@ async (dispatch: Dispatch<MoviesDispatchTypes>) => {
     });
   }
 };
+
+//Get movie details
+export const getMovieDetails =
+  (
+    id: number,
+    language: string = "en-US",
+  ) =>
+  async (dispatch: Dispatch<MoviesDispatchTypes>) => {
+    try {
+      const data = fetchDataFromApi(`/movie/${id}`, {
+        language,
+      }).then((response) => {
+        dispatch({
+          type: GET_MOVIEDETAILS,
+          payload: response,
+        });
+      });
+    } catch (err) {
+      console.log(err);
+      dispatch({
+        type: ERROR_MOVIES,
+      });
+    }
+  };

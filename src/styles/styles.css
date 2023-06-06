@@ -342,6 +342,7 @@ input:focus {
   padding: 5% 15%;
   background-color: rgb(88, 86, 86);
   color: white;
+  min-height: 69vh;
 }
 
 .ss-seasons {
