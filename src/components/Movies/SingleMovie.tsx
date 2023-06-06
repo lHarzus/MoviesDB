@@ -39,6 +39,9 @@ const SingleMovie = ({
             {Math.round(movies.details.vote_average * 10) / 10} / 10 with{" "}
             {movies.details.vote_count} votes
           </p>
+          <a href={movies.details.homepage} className="homepage">
+            Movie homepage <i className="bi bi-arrow-right"></i>
+          </a>
           <h2>Description</h2>
           <p>{movies.details.overview}</p>
           <h2>Information</h2>
