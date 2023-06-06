@@ -1,7 +1,7 @@
 import React from "react";
 import { SeriesCard } from "./SeriesCard";
 import { Pagination } from "../Functional/Pagination";
-import { Filter } from "./Filter";
+import { Filter } from "../Functional/Filter";
 
 export const DisplaySeries = ({
   series,

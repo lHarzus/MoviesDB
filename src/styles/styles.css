@@ -299,6 +299,9 @@ input:focus {
   border: 1px solid #fe5f55;
   border-radius: 15px;
   color: rgb(51, 50, 50);
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .form-sorter {
@@ -310,10 +313,6 @@ input:focus {
 }
 
 @media screen and (min-width: 1024px) {
-  .form-sort {
-    display: flex;
-    justify-content: space-evenly;
-  }
   .form-sorter {
     display: flex;
     flex-direction: column;
@@ -473,14 +472,14 @@ input:focus {
   }
 }
 /*Search*/
-.search h1 {
+.movies h1 {
   text-align: center;
   font-size: 3rem;
   color: #f0b67f;
 }
 
 @media screen and (min-width: 1024px) {
-  .search {
+  .movies {
     margin: 10rem 15%;
   }
 }/*# sourceMappingURL=styles.css.map */

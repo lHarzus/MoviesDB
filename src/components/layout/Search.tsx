@@ -15,7 +15,7 @@ const Search = ({ search, movies }) => {
 
   if (!movies.search || movies.search.isEmpty) return <p>Loading</p>;
   return (
-    <div className="search">
+    <div className="movies">
       <h1>Search Results</h1>
       <div className="display-series">
         {movies.search.map((s: any, i: number) => (

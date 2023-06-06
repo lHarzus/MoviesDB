@@ -23,7 +23,7 @@ export const Filter = ({ submitSorter }: { submitSorter: any }) => {
       <form className="form-sorter" onSubmit={(e) => submitSorter(e, sorter)}>
         <div className="form-sort">
           <div className="sort-types">
-            <h1>Sort Types</h1>
+            <h2>Sort Types</h2>
             <div>
               <input
                 type="checkbox"
@@ -79,7 +79,7 @@ export const Filter = ({ submitSorter }: { submitSorter: any }) => {
             </div>
           </div>
           <div className="sort">
-            <h1>Sort</h1>
+            <h2>Sort</h2>
             <div>
               <input
                 type="checkbox"
@@ -100,7 +100,7 @@ export const Filter = ({ submitSorter }: { submitSorter: any }) => {
             </div>
           </div>
           <div>
-            <h1>Adult Movies?</h1>
+            <h2>Adult Movies?</h2>
             <input
               type="checkbox"
               name="adult"
@@ -110,7 +110,7 @@ export const Filter = ({ submitSorter }: { submitSorter: any }) => {
             <label htmlFor="adult">Adult</label>
           </div>
           <div>
-            <h1>Include Video?</h1>
+            <h2>Include Video?</h2>
             <input
               type="checkbox"
               name="video"

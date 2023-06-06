@@ -232,6 +232,9 @@
   border: 1px solid $primary;
   border-radius: 15px;
   color: $background;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .form-sorter {
@@ -243,10 +246,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .form-sort {
-    display: flex;
-    justify-content: space-evenly;
-  }
 
   .form-sorter {
     display: flex;
@@ -414,7 +413,7 @@
 }
 
 /*Search*/
-.search{
+.movies{
  h1{
   text-align: center;
   font-size: 3rem;
@@ -423,7 +422,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .search{
+  .movies{
     margin: 10rem 15%;
   }
 }
