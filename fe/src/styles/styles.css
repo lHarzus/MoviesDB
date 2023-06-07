@@ -490,4 +490,46 @@ input:focus {
 }
 .homepage:hover {
   color: rgba(240, 182, 127, 0.5) !important;
+}
+
+/*Login & Register*/
+.form-page {
+  min-height: 72vh;
+  background-color: rgb(88, 86, 86);
+  padding: 1rem;
+  text-align: center;
+}
+.form-page h1 {
+  color: #fe5f55;
+  font-size: 3rem;
+}
+.form-page h2 {
+  color: #f0b67f;
+}
+.form-page .input {
+  max-width: 80%;
+  padding: 1rem;
+}
+.form-page .btn {
+  margin: 3rem;
+}
+
+/*Alert*/
+.alert {
+  padding: 0.8rem;
+  margin: 1rem 30vw;
+  opacity: 0.9;
+  background: var(--light-color);
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.alert-danger {
+  background: #dc3545;
+  color: #fff;
+}
+
+.alert-success {
+  background: #28a745;
+  color: #fff;
 }/*# sourceMappingURL=styles.css.map */
