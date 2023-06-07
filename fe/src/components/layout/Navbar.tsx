@@ -28,6 +28,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         </Link>
         {isAuthenticated ? (
           <>
+            <Link to="/profile" className="link">
+              Profile <i className="bi bi-person"></i>
+            </Link>
             <Link to="/" className="link" onClick={logout}>
               Logout <i className="bi bi-box-arrow-in-right"></i>
             </Link>
