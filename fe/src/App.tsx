@@ -12,6 +12,7 @@ import Search from "./components/layout/Search";
 import SingleMovie from "./components/Movies/SingleMovie";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import Profile from "./components/auth/Profile";
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -43,6 +44,7 @@ function App() {
           <Route path="/movie/:param" element={<SingleMovie />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
       </Router>
