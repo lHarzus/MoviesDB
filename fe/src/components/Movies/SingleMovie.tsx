@@ -4,21 +4,44 @@ import { connect } from "react-redux";
 import { getMovieDetails } from "../../actions/movies";
 import { Company } from "../Crew/Company";
 import { Country } from "../Crew/Country";
+import {
+  getCurrentProfile,
+  addMovie,
+  deleteMovie,
+} from "../../actions/profile";
 
 const SingleMovie = ({
+  profile,
+  getCurrentProfile,
+  addMovie,
+  deleteMovie,
+  auth: { isAuthenticated, loading },
   getMovieDetails,
   movies,
 }: {
+  profile: any;
+  getCurrentProfile: any;
+  auth: any;
   getMovieDetails: any;
   movies: any;
+  addMovie: any;
+  deleteMovie: any;
 }) => {
   const id = window.location.pathname.split("/")[2];
 
   useEffect(() => {
     getMovieDetails(id);
+    getCurrentProfile();
   }, []);
 
-  if (!movies.details) return <div>Loading </div>;
+  let isFavorite = false;
+  if (!profile.loading) {
+    profile.profile.movies.filter((movie) => {
+      if (movie.id === id) isFavorite = true;
+    });
+  }
+
+  if (!movies || !movies.details || loading) return <div>Loading </div>;
   return (
     <div className="singleSeries">
       <div className="ss-info">
@@ -46,6 +69,18 @@ const SingleMovie = ({
           >
             Movie homepage <i className="bi bi-arrow-right"></i>
           </a>
+          <div>
+            {isFavorite ? (
+              <h3 onClick={() => deleteMovie(id)} className="addFavorite">
+                <i className="bi bi-bookmark-fill bookmark"></i> Remove from
+                favorites
+              </h3>
+            ) : (
+              <h3 onClick={() => addMovie(id)} className="addFavorite">
+                <i className="bi bi-bookmark bookmark"></i> Add to Favorites
+              </h3>
+            )}
+          </div>
           <h2>Description</h2>
           <p>{movies.details.overview}</p>
           <h2>Information</h2>
@@ -72,12 +107,20 @@ const SingleMovie = ({
 
 SingleMovie.propTypes = {
   getMovieDetails: PropTypes.func.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
+  addMovie: PropTypes.func.isRequired,
+  deleteMovie: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   movies: state.movies,
+  auth: state.auth,
+  profile: state.profile,
 });
 
 export default connect(mapStateToProps, {
   getMovieDetails,
+  getCurrentProfile,
+  addMovie,
+  deleteMovie,
 })(SingleMovie);

@@ -181,6 +181,10 @@
   }
 }
 
+.addFavorite{
+  cursor: pointer !important;
+}
+
 @media screen and (min-width: 1024px) {
   .series-type {
     display: flex;

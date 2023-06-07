@@ -41,6 +41,11 @@ a:visited {
   color: #fe5f55;
 }
 
+.bookmark {
+  color: rgb(163, 115, 11);
+  font-size: 2rem;
+}
+
 .slider {
   border: 1px solid #fe5f55;
   border-radius: 25px;
@@ -249,6 +254,10 @@ input:focus {
 .single-series .title {
   font-size: 1.5rem;
   color: #fe5f55;
+}
+
+.addFavorite {
+  cursor: pointer !important;
 }
 
 @media screen and (min-width: 1024px) {
