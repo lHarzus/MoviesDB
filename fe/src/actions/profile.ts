@@ -1,4 +1,5 @@
 import axios from "axios";
+import { setAlert } from "./alert";
 
 import {
   GET_PROFILE,
@@ -11,7 +12,7 @@ import {
 //Get current users profile
 export const getCurrentProfile = () => async (dispatch) => {
   try {
-    const res = await axios.get("/api/profile/me");
+    const res = await axios.get("http://localhost:5000/api/profile/me", {headers :{"x-auth-token" : localStorage.token}});
 
     dispatch({
       type: GET_PROFILE,
@@ -44,16 +45,17 @@ export const getProfileById = (userId) => async (dispatch) => {
 
 //Create or update profile
 export const createProfile =
-  (formData, history, edit = false) =>
+  (formData, edit = false) =>
   async (dispatch) => {
     try {
       const config = {
         headers: {
           "Content-Type": "application/json",
+          "x-auth-token" : localStorage.token
         },
       };
-
-      const res = await axios.post("/api/profile", formData, config);
+      
+      const res = await axios.post("http://localhost:5000/api/profile", formData, config);
 
       dispatch({
         type: GET_PROFILE,
@@ -61,18 +63,13 @@ export const createProfile =
       });
 
       dispatch(
-        console.log(edit ? "Profile updated" : "Profile created", "success")
+        setAlert(edit ? "Profile updated" : "Profile created", "success")
       ); //set an alert
-
-      if (!edit) {
-        //if we're creating a new profile we get redirected
-        history("/");
-      }
     } catch (err) {
-      const erros = err.response.data.erros;
+      const erros = err.response.data ? err.response.data.erros : null;
 
       if (erros) {
-        erros.forEach((error) => dispatch(console.log(error.msg, "danger")));
+        erros.forEach((error) => dispatch(setAlert(error.msg, "danger")));
       }
       dispatch({
         type: PROFILE_ERROR,
@@ -84,7 +81,6 @@ export const createProfile =
 //Add movie
 export const addMovie = (formData) => async (dispatch) => {
   try {
-    console.log(formData);
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -101,7 +97,7 @@ export const addMovie = (formData) => async (dispatch) => {
     const erros = err.response.data.erros;
 
     if (erros) {
-      erros.forEach((error) => dispatch(console.log(error.msg, "danger")));
+      erros.forEach((error) => dispatch(setAlert(error.msg, "danger")));
     }
     dispatch({
       type: PROFILE_ERROR,
@@ -123,7 +119,7 @@ export const deleteMovie = (id) => async (dispatch) => {
     const erros = err.response.data.erros;
 
     if (erros) {
-      erros.forEach((error) => dispatch(console.log(error.msg, "danger")));
+      erros.forEach((error) => dispatch(setAlert(error.msg, "danger")));
     }
     dispatch({
       type: PROFILE_ERROR,
@@ -144,7 +140,7 @@ export const deleteAccount = () => async (dispatch) => {
       const erros = err.response.data.erros;
 
       if (erros) {
-        erros.forEach((error) => dispatch(console.log(error.msg, "danger")));
+        erros.forEach((error) => dispatch(setAlert(error.msg, "danger")));
       }
       dispatch({
         type: PROFILE_ERROR,
@@ -157,7 +153,6 @@ export const deleteAccount = () => async (dispatch) => {
 //Add series
 export const addSeries = (formData) => async (dispatch) => {
     try {
-      console.log(formData);
       const config = {
         headers: {
           "Content-Type": "application/json",
@@ -174,7 +169,7 @@ export const addSeries = (formData) => async (dispatch) => {
       const erros = err.response.data.erros;
   
       if (erros) {
-        erros.forEach((error) => dispatch(console.log(error.msg, "danger")));
+        erros.forEach((error) => dispatch(setAlert(error.msg, "danger")));
       }
       dispatch({
         type: PROFILE_ERROR,
@@ -196,7 +191,7 @@ export const addSeries = (formData) => async (dispatch) => {
       const erros = err.response.data.erros;
   
       if (erros) {
-        erros.forEach((error) => dispatch(console.log(error.msg, "danger")));
+        erros.forEach((error) => dispatch(setAlert(error.msg, "danger")));
       }
       dispatch({
         type: PROFILE_ERROR,

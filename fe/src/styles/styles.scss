@@ -477,3 +477,28 @@
   background: #28a745;
   color: #fff;
 }
+
+/*Profile*/
+.profile{
+  background-color: $background2;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  min-height: 68vh;
+  h1{
+    color: $primary;
+  }
+  input{
+    width: 60%;
+    padding: 1rem;
+  }
+  .btn{
+    margin-top: 3rem;
+  }
+}
+
+.favorite{
+  background-color: $background;
+  border-radius: 15px;
+  padding: 1rem;
+}

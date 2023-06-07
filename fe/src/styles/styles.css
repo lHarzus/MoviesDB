@@ -532,4 +532,29 @@ input:focus {
 .alert-success {
   background: #28a745;
   color: #fff;
+}
+
+/*Profile*/
+.profile {
+  background-color: rgb(88, 86, 86);
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  min-height: 68vh;
+}
+.profile h1 {
+  color: #fe5f55;
+}
+.profile input {
+  width: 60%;
+  padding: 1rem;
+}
+.profile .btn {
+  margin-top: 3rem;
+}
+
+.favorite {
+  background-color: rgb(51, 50, 50);
+  border-radius: 15px;
+  padding: 1rem;
 }/*# sourceMappingURL=styles.css.map */
