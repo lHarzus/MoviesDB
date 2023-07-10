@@ -15,7 +15,7 @@ const Login = ({ login, auth: { isAuthenticated } }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (email.current && password.current) {
-      login(email.current.value, password.current.value);
+      login(email.current.value, password.current.value); //
     }
   };
   return (
